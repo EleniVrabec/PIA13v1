@@ -6,6 +6,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useState } from 'react';
 import FancyBox from '@/components/FancyBox';
+import Box from '@/components/Box';
 
 export default function HomeScreen() {
   const [text, setText] = useState('hello ');
@@ -18,31 +19,40 @@ export default function HomeScreen() {
       flex:1,
       
     }}>
-    <View style={{backgroundColor: 'yellow', height:150, flexDirection:'row'}}>
-
-          <View style={{backgroundColor: 'blue', flex:1}} />
-          <View style={{backgroundColor: 'red', flex:1}} />
-          <View style={{backgroundColor: 'white', flex:1}} />
-          <View style={{backgroundColor: 'green', flex:1}} />
-          
-
+    <View style={{
+      backgroundColor: 'red', 
+      height:150, margin:5, 
+      flexDirection:'row', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      borderTopLeftRadius: 50,   // Rounded top-left corner
+      borderTopRightRadius: 50, 
+      paddingTop:20 // Rounded top-right corner
+      }}>
+      <Text style={{fontSize:60, color:'black'}}>RÖD</Text>
     </View>
-   <View style={{backgroundColor:'pink', height:50, justifyContent:'center', alignItems:'center'}}>
-    <Text>Hello World!</Text>
-    
+
+    <View style={{backgroundColor: 'transparent', margin: 5, height:150, flexDirection:'row'}}> 
+        <View style={{backgroundColor: 'green', marginRight: 5, padding:10, flex:1}} >
+             <Text style={{fontSize:60, color:'black'}}>GRÖN</Text>
+          </View>
+        <View style={{backgroundColor: 'yellow', flex:1}} />
     </View>
-    <View style={{flex: 1 , justifyContent:'center', alignItems:'center'}}>
-    <FancyBox/>
-      <Text style={{fontSize:60, color:'white'}}>{counter}</Text>
-      </View>
-    
-   <View style={{backgroundColor:'red', height:50, bottom:0}}>
-    
-   <Button onPress={() => {
-    setText('Yeaaaaaaa')
-    console.log('btn clicked')
-    setCount(counter + 1)
-   }} title='Tryck här'></Button>
+
+    <View style={{backgroundColor: 'transparent', height:80,margin: 5, flexDirection:'row'}}>
+       <View style={{backgroundColor: 'red', marginRight: 5, flex:2.5}} ></View>
+       <View style={{backgroundColor: 'black', flex:1}} />
+    </View>
+
+   <Box/> 
+
+   <View style={{
+    backgroundColor:'orange', 
+    height:60, 
+    margin: 5, 
+    justifyContent: 'center', alignItems: 'flex-end'
+    }}>
+      <Text style={{fontSize:40, padding:10, color:'black'}}>ORANGE</Text> 
    </View>
   </View>
       
